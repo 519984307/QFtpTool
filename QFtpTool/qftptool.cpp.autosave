@@ -1,0 +1,21 @@
+#include "qftptool.h"
+#include "ui_qftptool.h"
+#include <QFtp>
+
+QFtpTool::QFtpTool(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::QFtpTool)
+{
+    ui->setupUi(this);
+
+    QFtp ftp;
+    QString 
+    ftp.connectToHost(127.0.0.1,21);  //端口默认是21
+    ftp.login(account,pwd);
+
+}
+
+QFtpTool::~QFtpTool()
+{
+    delete ui;
+}
